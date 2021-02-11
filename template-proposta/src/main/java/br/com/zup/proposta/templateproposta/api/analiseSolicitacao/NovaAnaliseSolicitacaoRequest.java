@@ -1,8 +1,6 @@
-package br.com.zup.proposta.templateproposta.api.consulta;
+package br.com.zup.proposta.templateproposta.api.analiseSolicitacao;
 
-import br.com.zup.proposta.templateproposta.proposta.NovaPropostaRequest;
 import br.com.zup.proposta.templateproposta.proposta.Proposta;
-import com.mysql.cj.log.Log;
 
 public class NovaAnaliseSolicitacaoRequest {
     private String nome;

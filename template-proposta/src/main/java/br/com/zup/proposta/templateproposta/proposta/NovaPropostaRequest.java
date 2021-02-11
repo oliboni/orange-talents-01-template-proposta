@@ -1,6 +1,5 @@
 package br.com.zup.proposta.templateproposta.proposta;
 
-import br.com.zup.proposta.templateproposta.api.consulta.AnaliseSolicitacao;
 import br.com.zup.proposta.templateproposta.endereco.NovoEnderecoRequest;
 import br.com.zup.proposta.templateproposta.validations.CpfOuCnpj;
 

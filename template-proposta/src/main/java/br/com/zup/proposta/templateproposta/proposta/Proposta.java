@@ -39,6 +39,7 @@ public class Proposta {
     private Endereco endereco;
     @Enumerated(EnumType.STRING)
     private EstadoProposta estadoProposta;
+    private String numeroCartao;
 
     public Proposta(@NotBlank String nome, @NotBlank String documento, @NotBlank @Email String email, @NotNull @Positive BigDecimal salario, @Valid @NotNull Endereco endereco) {
         Assert.notNull(endereco,"O endereço não pode ser nulo!");
@@ -81,7 +82,19 @@ public class Proposta {
         return estadoProposta;
     }
 
+    public EstadoProposta getEstadoProposta() {
+        return estadoProposta;
+    }
+
+    public String getNumeroCartao() {
+        return numeroCartao;
+    }
+
     public void atualizaStatus(EstadoProposta estadoProposta) {
         this.estadoProposta = estadoProposta;
+    }
+
+    public void atualizaNumeroCartao(String numCartao) {
+        this.numeroCartao = numCartao;
     }
 }

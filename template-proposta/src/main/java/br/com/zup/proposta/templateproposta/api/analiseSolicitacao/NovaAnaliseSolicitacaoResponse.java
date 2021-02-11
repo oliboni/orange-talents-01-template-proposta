@@ -1,6 +1,4 @@
-package br.com.zup.proposta.templateproposta.api.consulta;
-
-import br.com.zup.proposta.templateproposta.api.consulta.AnaliseSolicitacao;
+package br.com.zup.proposta.templateproposta.api.analiseSolicitacao;
 
 public class NovaAnaliseSolicitacaoResponse {
 

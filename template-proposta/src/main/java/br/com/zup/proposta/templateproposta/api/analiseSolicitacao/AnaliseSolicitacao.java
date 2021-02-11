@@ -1,4 +1,4 @@
-package br.com.zup.proposta.templateproposta.api.consulta;
+package br.com.zup.proposta.templateproposta.api.analiseSolicitacao;
 
 import br.com.zup.proposta.templateproposta.proposta.EstadoProposta;
 
