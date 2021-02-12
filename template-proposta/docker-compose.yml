@@ -34,9 +34,6 @@ services:
       POSTGRES_DB: keycloak
       POSTGRES_HOST: postgres
 
-  MySql:
-    image: ''
-
   keycloak:
     image: jboss/keycloak
     ports:
@@ -136,6 +133,24 @@ services:
       VAULT_DEV_ROOT_TOKEN_ID: ee413645-dbe8-4848-afc6-6bb2768ada75
       VAULT_TOKEN: ee413645-dbe8-4848-afc6-6bb2768ada75
       VAULT_ADDR: http://127.0.0.1:8200
+
+  propostas-api:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: oliboni/propostas
+    container_name: propostas
+    depends_on:
+      - postgres
+    ports:
+      - 8080:8080
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DATABASE_USERNAME: keycloak
+      DATABASE_PASSWORD: password
+      ANALISE_HOST: analise:9999/api/solicitacao
+      ACCOUNT_HOST: contas:8888/api/cartoes?
 
 volumes:
   grafana-volume:
