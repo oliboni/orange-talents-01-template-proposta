@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface PropostaRepository extends JpaRepository<Proposta, Long> {
     Optional<Proposta> findByDocumento(String documento);
 
-    @Query("select p from Proposta p where p.estadoProposta = 'ELEGIVEL' and p.numeroCartao is null")
+    @Query("select p from Proposta p LEFT JOIN p.cartao c where p.estadoProposta = 'ELEGIVEL' and c is null")
     List<Proposta> findAllElegivelCartaoisNull();
 
 }

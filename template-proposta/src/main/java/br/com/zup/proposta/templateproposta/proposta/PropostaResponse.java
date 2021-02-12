@@ -28,7 +28,7 @@ public class PropostaResponse {
         this.salario = proposta.getSalario();
         this.endereco = new EnderecoResponse(proposta.getEndereco());
         this.estadoProposta = proposta.getEstadoProposta();
-        this.numeroCartao = proposta.getNumeroCartao();
+        this.numeroCartao = proposta.getCartao().getNumero();
     }
 
 }

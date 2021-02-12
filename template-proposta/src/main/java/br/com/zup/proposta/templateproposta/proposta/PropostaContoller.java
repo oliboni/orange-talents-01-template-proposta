@@ -3,7 +3,6 @@ package br.com.zup.proposta.templateproposta.proposta;
 import br.com.zup.proposta.templateproposta.api.analiseSolicitacao.NovaAnaliseSolicitacaoRequest;
 import br.com.zup.proposta.templateproposta.api.analiseSolicitacao.SolicitacaoAnalise;
 import br.com.zup.proposta.templateproposta.api.cartao.ConsultaCartao;
-import br.com.zup.proposta.templateproposta.api.cartao.NovoCartaoResponse;
 import br.com.zup.proposta.templateproposta.exceptions.ApiErrorException;
 import feign.FeignException;
 import org.slf4j.Logger;
@@ -17,7 +16,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 
 @RestController
 @RequestMapping("/api/propostas")

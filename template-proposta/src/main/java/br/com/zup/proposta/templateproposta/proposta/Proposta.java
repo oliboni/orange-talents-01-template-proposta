@@ -1,5 +1,6 @@
 package br.com.zup.proposta.templateproposta.proposta;
 
+import br.com.zup.proposta.templateproposta.cartao.Cartao;
 import br.com.zup.proposta.templateproposta.endereco.Endereco;
 import br.com.zup.proposta.templateproposta.validations.CpfOuCnpj;
 import org.springframework.util.Assert;
@@ -39,7 +40,8 @@ public class Proposta {
     private Endereco endereco;
     @Enumerated(EnumType.STRING)
     private EstadoProposta estadoProposta;
-    private String numeroCartao;
+    @OneToOne(mappedBy = "proposta", cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    private Cartao cartao;
 
     public Proposta(@NotBlank String nome, @NotBlank String documento, @NotBlank @Email String email, @NotNull @Positive BigDecimal salario, @Valid @NotNull Endereco endereco) {
         Assert.notNull(endereco,"O endereço não pode ser nulo!");
@@ -86,15 +88,15 @@ public class Proposta {
         return estadoProposta;
     }
 
-    public String getNumeroCartao() {
-        return numeroCartao;
+    public Cartao getCartao() {
+        return cartao;
     }
 
     public void atualizaStatus(EstadoProposta estadoProposta) {
         this.estadoProposta = estadoProposta;
     }
 
-    public void atualizaNumeroCartao(String numCartao) {
-        this.numeroCartao = numCartao;
+    public void atualizaCartao(Cartao cartao) {
+        this.cartao = cartao;
     }
 }
