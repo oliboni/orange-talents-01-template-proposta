@@ -1,6 +1,5 @@
 package br.com.zup.proposta.templateproposta.security;
 
-import br.com.zup.proposta.templateproposta.api.cartao.ConsultaCartaoSheduled;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
@@ -16,14 +15,15 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        logger.info("Acessado as configurações de autenticação"+http.toString());
-        System.out.println(http.toString());
+        logger.info("Realizando as configurações de autenticação");
         http.authorizeRequests(authorize ->
                 authorize
                     .antMatchers(HttpMethod.POST,"/api/propostas/**").hasAuthority("SCOPE_propostas:write")
                     .antMatchers(HttpMethod.GET,"/api/propostas/**").hasAuthority("SCOPE_propostas:read")
                     .antMatchers(HttpMethod.GET,"/api/actuator/**").hasAuthority("SCOPE_propostas:read")
-                    .antMatchers(HttpMethod.GET,"/api/biometrias/**").hasAuthority("SCOPE_propostas:write")
+                    .antMatchers(HttpMethod.POST,"/api/actuator/**").hasAuthority("SCOPE_propostas:write")
+                    .antMatchers(HttpMethod.POST,"/api/biometrias/**").hasAuthority("SCOPE_propostas:write")
+                    .antMatchers(HttpMethod.POST,"/api/bloqueio/**").hasAuthority("SCOPE_propostas:write")
                     .anyRequest().denyAll())
                 .csrf().disable()
                 .sessionManagement()

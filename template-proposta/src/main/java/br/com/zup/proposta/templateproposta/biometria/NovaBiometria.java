@@ -11,6 +11,10 @@ public class NovaBiometria {
     @NotBlank
     private  String biometria;
 
+    public NovaBiometria(String biometria) {
+        this.biometria = biometria;
+    }
+
     public String getBiometria() {
         return biometria;
     }
