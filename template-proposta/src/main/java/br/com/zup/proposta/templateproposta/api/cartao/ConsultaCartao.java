@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name = "${feign.consultaCartao}", url = "${feign.urlConsultaCartao}")
+@FeignClient(name = "${feign.consultaCartao}", url = "${feign.urlCartao}")
 public interface ConsultaCartao {
 
     @RequestMapping(method = RequestMethod.GET, value = "?idProposta={id}")

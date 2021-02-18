@@ -1,5 +1,7 @@
 package br.com.zup.proposta.templateproposta.proposta;
 
+import br.com.zup.proposta.templateproposta.cartao.CartaoResponse;
+import br.com.zup.proposta.templateproposta.cartao.SituacaoCartao;
 import br.com.zup.proposta.templateproposta.endereco.EnderecoResponse;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -19,7 +21,7 @@ public class PropostaResponse {
     @JsonFormat
     private EstadoProposta estadoProposta;
     @JsonFormat
-    private String numeroCartao;
+    private CartaoResponse cartao;
 
     public PropostaResponse(Proposta proposta) {
         this.nome = proposta.getNome();
@@ -28,7 +30,7 @@ public class PropostaResponse {
         this.salario = proposta.getSalario();
         this.endereco = new EnderecoResponse(proposta.getEndereco());
         this.estadoProposta = proposta.getEstadoProposta();
-        this.numeroCartao = proposta.getCartao().getNumero();
+        this.cartao = new CartaoResponse(proposta.getCartao());
     }
 
 }

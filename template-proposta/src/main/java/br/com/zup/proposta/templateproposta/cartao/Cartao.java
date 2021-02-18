@@ -21,6 +21,8 @@ public class Cartao {
     private Proposta proposta;
     @OneToMany(mappedBy = "cartao")
     private List<Biometria> biometria;
+    @Enumerated(EnumType.STRING)
+    private SituacaoCartao situacaoCartao;
 
     public Cartao(String numero, String titular, LocalDateTime emitidoEm, BigDecimal limite, Proposta proposta) {
         this.numero = numero;
@@ -28,6 +30,7 @@ public class Cartao {
         this.emitidoEm = emitidoEm;
         this.limite = limite;
         this.proposta = proposta;
+        this.situacaoCartao = SituacaoCartao.ATIVO;
     }
 
     @Deprecated
@@ -48,5 +51,25 @@ public class Cartao {
 
     public LocalDateTime getEmitidoEm() {
         return emitidoEm;
+    }
+
+    public BigDecimal getLimite() {
+        return limite;
+    }
+
+    public Proposta getProposta() {
+        return proposta;
+    }
+
+    public List<Biometria> getBiometria() {
+        return biometria;
+    }
+
+    public SituacaoCartao getSituacaoCartao() {
+        return situacaoCartao;
+    }
+
+    public void atualizaSituacao(SituacaoCartao situacaoCartao){
+        this.situacaoCartao = situacaoCartao;
     }
 }

@@ -40,6 +40,7 @@ services:
       - 18443:8443
       - 18080:8080
       - 19990:9990
+      - 18787:8787
     depends_on:
       # Just a delay to wait for postgres! This is not recommended!
       - grafana
@@ -142,6 +143,7 @@ services:
     container_name: propostas
     depends_on:
       - postgres
+      - keycloak
     ports:
       - 8080:8080
     environment:
@@ -151,8 +153,7 @@ services:
       DATABASE_PASSWORD: password
       ANALISE_HOST: analise:9999/api/solicitacao
       ACCOUNT_HOST: contas:8888/api/cartoes?
-      KEYCLOAK_ISSUER_URI: http://keycloak:8080/auth/realms/propostas
-      KEYCLOAK_JWKS_URI: http://keycloak:8080/auth/realms/propostas/protocol/openid-connect/certs
+      KEYCLOAK_JWKS_URI: keycloak:8080
 
 volumes:
   grafana-volume:

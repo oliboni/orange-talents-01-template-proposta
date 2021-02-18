@@ -21,7 +21,7 @@ public class BloqueioCartao {
     @Column(nullable = false)
     private String userAgent;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.MERGE})
     private Cartao cartao;
 
     public BloqueioCartao(Cartao cartao, String ipClient, String userAgent) {
