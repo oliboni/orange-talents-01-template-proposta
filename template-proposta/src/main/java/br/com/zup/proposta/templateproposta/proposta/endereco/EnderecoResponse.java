@@ -1,4 +1,4 @@
-package br.com.zup.proposta.templateproposta.endereco;
+package br.com.zup.proposta.templateproposta.proposta.endereco;
 
 public class EnderecoResponse {
     private String pais;

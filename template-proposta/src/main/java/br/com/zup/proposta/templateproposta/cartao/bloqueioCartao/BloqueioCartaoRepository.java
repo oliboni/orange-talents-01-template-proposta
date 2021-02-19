@@ -1,4 +1,4 @@
-package br.com.zup.proposta.templateproposta.bloqueioCartao;
+package br.com.zup.proposta.templateproposta.cartao.bloqueioCartao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

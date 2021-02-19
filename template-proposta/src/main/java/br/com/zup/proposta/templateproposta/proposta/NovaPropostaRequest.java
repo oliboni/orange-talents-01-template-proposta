@@ -1,6 +1,6 @@
 package br.com.zup.proposta.templateproposta.proposta;
 
-import br.com.zup.proposta.templateproposta.endereco.NovoEnderecoRequest;
+import br.com.zup.proposta.templateproposta.proposta.endereco.NovoEnderecoRequest;
 import br.com.zup.proposta.templateproposta.validations.CpfOuCnpj;
 
 import javax.validation.Valid;

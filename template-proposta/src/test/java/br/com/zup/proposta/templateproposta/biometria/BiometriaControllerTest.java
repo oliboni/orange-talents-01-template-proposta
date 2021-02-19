@@ -1,9 +1,11 @@
 package br.com.zup.proposta.templateproposta.biometria;
 
 import br.com.zup.proposta.templateproposta.cartao.Cartao;
-import br.com.zup.proposta.templateproposta.endereco.Endereco;
+import br.com.zup.proposta.templateproposta.cartao.biometria.Biometria;
+import br.com.zup.proposta.templateproposta.cartao.biometria.BiometriaRepository;
+import br.com.zup.proposta.templateproposta.cartao.biometria.NovaBiometria;
+import br.com.zup.proposta.templateproposta.proposta.endereco.Endereco;
 import br.com.zup.proposta.templateproposta.proposta.Proposta;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,14 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithAnonymousUser;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import javax.transaction.Transactional;
-import java.lang.annotation.Documented;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;

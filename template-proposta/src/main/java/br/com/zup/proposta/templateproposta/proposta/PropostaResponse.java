@@ -1,8 +1,7 @@
 package br.com.zup.proposta.templateproposta.proposta;
 
 import br.com.zup.proposta.templateproposta.cartao.CartaoResponse;
-import br.com.zup.proposta.templateproposta.cartao.SituacaoCartao;
-import br.com.zup.proposta.templateproposta.endereco.EnderecoResponse;
+import br.com.zup.proposta.templateproposta.proposta.endereco.EnderecoResponse;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.math.BigDecimal;

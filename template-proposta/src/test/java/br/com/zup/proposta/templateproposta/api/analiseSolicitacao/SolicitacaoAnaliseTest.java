@@ -1,6 +1,6 @@
 package br.com.zup.proposta.templateproposta.api.analiseSolicitacao;
 
-import br.com.zup.proposta.templateproposta.endereco.Endereco;
+import br.com.zup.proposta.templateproposta.proposta.endereco.Endereco;
 import br.com.zup.proposta.templateproposta.proposta.Proposta;
 import feign.FeignException;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,6 @@
 package br.com.zup.proposta.templateproposta.cartao;
 
-import br.com.zup.proposta.templateproposta.biometria.Biometria;
+import br.com.zup.proposta.templateproposta.cartao.biometria.Biometria;
 import br.com.zup.proposta.templateproposta.proposta.Proposta;
 
 import javax.persistence.*;

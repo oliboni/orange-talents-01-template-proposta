@@ -1,8 +1,7 @@
 package br.com.zup.proposta.templateproposta.proposta;
 
-import br.com.zup.proposta.templateproposta.endereco.NovoEnderecoRequest;
+import br.com.zup.proposta.templateproposta.proposta.endereco.NovoEnderecoRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

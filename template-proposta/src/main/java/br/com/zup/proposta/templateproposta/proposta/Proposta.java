@@ -1,7 +1,7 @@
 package br.com.zup.proposta.templateproposta.proposta;
 
 import br.com.zup.proposta.templateproposta.cartao.Cartao;
-import br.com.zup.proposta.templateproposta.endereco.Endereco;
+import br.com.zup.proposta.templateproposta.proposta.endereco.Endereco;
 import br.com.zup.proposta.templateproposta.validations.CpfOuCnpj;
 import org.springframework.util.Assert;
 

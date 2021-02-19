@@ -1,35 +1,24 @@
-package br.com.zup.proposta.templateproposta.endereco;
+package br.com.zup.proposta.templateproposta.proposta.endereco;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-@Entity
-public class Endereco {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class NovoEnderecoRequest {
     @NotBlank
-    @Column(nullable = false)
     private String pais;
     @NotBlank
-    @Column(nullable = false)
     private String estado;
     @NotBlank
-    @Column(nullable = false)
     private String cidade;
     @NotBlank
-    @Column(nullable = false)
     private String bairro;
     @NotBlank
-    @Column(nullable = false)
     private String rua;
     @NotNull
-    @Column(nullable = false)
     private Integer numero;
     private String complemento;
 
-    public Endereco(String pais, String estado, String cidade, String bairro, String rua, Integer numero, String complemento) {
+    public NovoEnderecoRequest(@NotBlank String pais, @NotBlank String estado, @NotBlank String cidade, @NotBlank String bairro, @NotBlank String rua, @NotNull Integer numero, String complemento) {
         this.pais = pais;
         this.estado = estado;
         this.cidade = cidade;
@@ -39,13 +28,8 @@ public class Endereco {
         this.complemento = complemento;
     }
 
-    @Deprecated
-    public Endereco(){
-
-    }
-
-    public Long getId() {
-        return id;
+    public Endereco toEndereco(){
+        return new Endereco(pais,estado,cidade,bairro,rua,numero,complemento);
     }
 
     public String getPais() {

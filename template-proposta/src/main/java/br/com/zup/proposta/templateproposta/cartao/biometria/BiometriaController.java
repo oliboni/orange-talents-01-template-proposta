@@ -1,11 +1,10 @@
-package br.com.zup.proposta.templateproposta.biometria;
+package br.com.zup.proposta.templateproposta.cartao.biometria;
 
 import br.com.zup.proposta.templateproposta.cartao.Cartao;
 import br.com.zup.proposta.templateproposta.cartao.CartaoRepository;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 

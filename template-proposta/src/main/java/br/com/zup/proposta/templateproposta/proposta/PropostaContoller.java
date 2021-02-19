@@ -3,6 +3,7 @@ package br.com.zup.proposta.templateproposta.proposta;
 import br.com.zup.proposta.templateproposta.api.analiseSolicitacao.NovaAnaliseSolicitacaoRequest;
 import br.com.zup.proposta.templateproposta.api.analiseSolicitacao.SolicitacaoAnalise;
 import br.com.zup.proposta.templateproposta.api.cartao.ConsultaCartao;
+import br.com.zup.proposta.templateproposta.config.metrics.Metrics;
 import br.com.zup.proposta.templateproposta.exceptions.ApiErrorException;
 import feign.FeignException;
 import org.slf4j.Logger;
@@ -31,6 +32,9 @@ public class PropostaContoller {
     @Autowired
     private PropostaRepository propostaRepository;
 
+    @Autowired
+    private Metrics metrics;
+
     @PostMapping
     public ResponseEntity<?> novaProposta(@RequestBody @Valid NovaPropostaRequest request,
                                           UriComponentsBuilder uriBuilder){
@@ -54,6 +58,8 @@ public class PropostaContoller {
         logger.info("Retornou da análise: " + proposta.getAnalise());
 
         propostaRepository.save(proposta);
+
+        metrics.proposalCounter();
 
         URI location = uriBuilder.path("/api/propostas/{id}").buildAndExpand(proposta.getId()).toUri();
         logger.info("Devolveu a URI " + location);
