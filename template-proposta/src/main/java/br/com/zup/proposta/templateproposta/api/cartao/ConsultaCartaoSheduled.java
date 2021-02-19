@@ -20,7 +20,7 @@ public class ConsultaCartaoSheduled {
 
     @Scheduled(fixedRateString = "${proposta.consultaCartao}")
     public void consultaCartaoPropostasElegiveis(){
-        var propostas = propostaRepository.findAllElegivelCartaoisNull();
+        var propostas = propostaRepository.findTop100AllElegivelCartaoisNull();
         propostas.forEach(proposta -> {
             try {
                 NovoCartaoResponse cartaoResponse = consultaCartao.getSolicitacao(proposta.getId());

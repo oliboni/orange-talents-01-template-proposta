@@ -33,7 +33,6 @@ public class Carteira {
     private Cartao cartao;
 
     public Carteira(@NotBlank @Email String email, @NotNull CarteiraDigital carteiraDigital,@NotNull @Valid Cartao cartao) {
-        System.out.println("cheguei aqui");
         Assert.notNull(email,"O email não pode ser nulo");
         Assert.notNull(carteiraDigital,"A carteiraDigital não pode ser nula");
         Assert.notNull(cartao,"O cartao não pode ser nulo");

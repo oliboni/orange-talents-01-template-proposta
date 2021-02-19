@@ -41,5 +41,4 @@ public class NovaCarteiraRequest {
         return CarteiraDigital.valueOf(getCarteiraDigital());
     }
 
-
 }
