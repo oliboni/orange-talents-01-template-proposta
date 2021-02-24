@@ -19,13 +19,14 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
         logger.info("Realizando as configurações de autenticação");
         http.authorizeRequests(authorize ->
                 authorize
-                    .antMatchers(HttpMethod.POST,"/api/propostas/**").hasAuthority("SCOPE_propostas:write")
-                    .antMatchers(HttpMethod.GET,"/api/propostas/**").hasAuthority("SCOPE_propostas:read")
-                    .antMatchers(HttpMethod.GET,"/actuator/**").hasAuthority("SCOPE_propostas:read")
-                    .antMatchers(HttpMethod.POST,"/api/biometrias/**").hasAuthority("SCOPE_propostas:write")
-                    .antMatchers(HttpMethod.POST,"/api/bloqueio/**").hasAuthority("SCOPE_propostas:write")
-                    .antMatchers(HttpMethod.POST,"/api/cartao/**").hasAuthority("SCOPE_propostas:write")
-                    .anyRequest().denyAll())
+                        .antMatchers(HttpMethod.POST,"/api/propostas/**").hasAuthority("SCOPE_propostas:write")
+                        .antMatchers(HttpMethod.GET,"/api/propostas/**").hasAuthority("SCOPE_propostas:read")
+//                        .antMatchers(HttpMethod.GET,"/actuator/**").hasAuthority("SCOPE_propostas:read")
+                        .antMatchers(HttpMethod.POST,"/api/biometrias/**").hasAuthority("SCOPE_propostas:write")
+                        .antMatchers(HttpMethod.POST,"/api/bloqueio/**").hasAuthority("SCOPE_propostas:write")
+                        .antMatchers(HttpMethod.POST,"/api/cartao/**").hasAuthority("SCOPE_propostas:write")
+                        .antMatchers(HttpMethod.GET,"/actuator/**").permitAll()
+                        .anyRequest().denyAll())
                 .csrf().disable()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

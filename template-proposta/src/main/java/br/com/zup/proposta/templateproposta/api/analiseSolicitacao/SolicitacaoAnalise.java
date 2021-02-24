@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-@FeignClient(name = "${feign.solicitacaoAnalise}", url = "${feign.urlSolicitacaoAnalise}")
+@FeignClient(name = "solicitacaoAnalise", url = "${feign.urlSolicitacaoAnalise}")
 public interface SolicitacaoAnalise {
     @RequestMapping(method = RequestMethod.POST)
     NovaAnaliseSolicitacaoResponse getSolicitacao(@RequestBody NovaAnaliseSolicitacaoRequest request);

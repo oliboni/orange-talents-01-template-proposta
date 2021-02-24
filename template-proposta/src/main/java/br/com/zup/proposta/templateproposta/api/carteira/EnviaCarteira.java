@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name = "${feign.enviaCarteira}", url = "${feign.urlCartao}")
+@FeignClient(name = "enviaCarteira", url = "${feign.urlCartao}")
 public interface EnviaCarteira {
 
     @RequestMapping(method = RequestMethod.POST, value = "/{id}/carteiras")

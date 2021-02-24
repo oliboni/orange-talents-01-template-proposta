@@ -1,6 +1,5 @@
 package br.com.zup.proposta.templateproposta.config.metrics;
 
-import br.com.zup.proposta.templateproposta.proposta.PropostaContoller;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Tag;
@@ -11,13 +10,13 @@ import org.springframework.stereotype.Component;
 import java.util.*;
 
 @Component
-public class Metrics {
+public class MyMetrics {
     private final MeterRegistry meterRegistry;
     private final Collection<String> strings = new ArrayList<>();
     private final Random random = new Random();
 
 
-    public Metrics(MeterRegistry meterRegistry) {
+    public MyMetrics(MeterRegistry meterRegistry) {
         this.meterRegistry = meterRegistry;
         criarGauge();
     }

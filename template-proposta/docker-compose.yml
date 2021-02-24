@@ -11,7 +11,7 @@ services:
   kafka:
     image: "confluentinc/cp-kafka:5.2.1"
     ports:
-      - 9092:9092
+      - 9093:9092
     depends_on:
       - zookeeper
     environment:
@@ -112,7 +112,8 @@ services:
     image: prom/prometheus
     volumes:
       - prometheus-volume:/etc/prometheus/
-    network_mode: bridge
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+#    network_mode: bridge
     ports:
       - "9090:9090"
 

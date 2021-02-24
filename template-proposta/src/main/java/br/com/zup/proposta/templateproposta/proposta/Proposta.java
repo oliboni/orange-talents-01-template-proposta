@@ -1,8 +1,8 @@
 package br.com.zup.proposta.templateproposta.proposta;
 
 import br.com.zup.proposta.templateproposta.cartao.Cartao;
+import br.com.zup.proposta.templateproposta.config.security.CryptographyAttributeConverter;
 import br.com.zup.proposta.templateproposta.proposta.endereco.Endereco;
-import br.com.zup.proposta.templateproposta.validations.CpfOuCnpj;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
@@ -18,28 +18,35 @@ public class Proposta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NotBlank
     @Column(nullable = false)
     private String nome;
+
     @NotBlank
-    @CpfOuCnpj
     @Column(unique = true, nullable = false)
+    @Convert(converter = CryptographyAttributeConverter.class)
     private String documento;
+
     @NotBlank
     @Email
     @Column(nullable = false)
     private String email;
+
     @NotNull
     @Positive
     @Column(nullable = false)
     private BigDecimal salario;
+
     @Valid
     @NotNull
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(nullable = false)
     private Endereco endereco;
+
     @Enumerated(EnumType.STRING)
     private EstadoProposta estadoProposta;
+
     @OneToOne(mappedBy = "proposta", cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     private Cartao cartao;
 

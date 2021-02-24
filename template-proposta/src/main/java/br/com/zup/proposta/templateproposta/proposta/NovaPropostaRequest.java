@@ -57,4 +57,5 @@ public class NovaPropostaRequest {
     public Proposta toProposta() {
         return new Proposta(nome,documento,email,salario,novoEndereco.toEndereco());
     }
+
 }
